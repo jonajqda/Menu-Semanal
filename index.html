@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificador de Menús Semanales - WINDOWN AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <img src="./img/Designer.jpeg" alt="Logo de WINDOWN AI" class="logo">
+    </div>
+    <div class="container">
+        <h1>PLANIFICADOR DE MENÚS SEMANALES</h1>
+        <h2>Comida Mediterránea</h2>
+        <div>
+            <label for="portions">Número de personas: </label>
+            <input type="number" id="portions" value="1" min="1" onchange="updatePortions()">
+        </div>
+
+        <div class="week-planner" id="weekPlanner"></div>
+
+        <div class="button-container">
+            <button onclick="generateAndDownloadShoppingList()">Generar Lista de Compras y Descargar PDF</button>
+            <button onclick="generateAndDownloadMenu()">Generar Menú y Descargar PDF</button>
+            <button onclick="downloadPreparationInstructions()">Indicaciones de Preparación - Descargar PDF</button>
+        </div>
+
+        <div id="weeklyMenu" class="hidden">
+            <h2>Menú Semanal</h2>
+            <div id="menuContent"></div>
+        </div>
+
+        <div id="shoppingList" class="hidden">
+            <h2>Lista de la Compra</h2>
+            <ul id="ingredientsList"></ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
